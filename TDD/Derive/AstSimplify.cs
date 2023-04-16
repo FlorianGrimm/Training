@@ -1,8 +1,8 @@
 namespace Derive;
 
-public class AstDerive : Ast
+public class AstSimplify : Ast
 {
-    public AstDerive(Ast node)
+    public AstSimplify(Ast node)
     {
         Node = node;
     }

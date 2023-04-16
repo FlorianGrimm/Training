@@ -6,9 +6,10 @@ public class DeriveEngineTests
     public void DeriveEngine_Hack()
     {
         var engine = new DeriveEngine();        
-        var result = engine.Derive("x 2 ^");
-        Assert.Equal("2 x 1 ^ *", result);
-        //Assert.Equal("2 x *", result);
+        //var result = engine.Parse("x 2 ^").Derive().ToString();
+        //Assert.Equal("2 x 1 ^ *", result);
+        var result = engine.Parse("x 2 ^").Derive().ToString();
+        Assert.Equal("2 x *", result);
     }
 
     [Theory]

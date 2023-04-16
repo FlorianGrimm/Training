@@ -21,7 +21,7 @@ public class Ast
     
     public Ast Derive()
     {
-        return this.Visit(new DeriveVisitor());
+        return this.Visit(new DeriveVisitor()).Simplify();
     }
 
     
