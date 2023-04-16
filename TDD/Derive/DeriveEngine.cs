@@ -41,7 +41,12 @@ public class DeriveEngine
 
         if (input == "+")
         {
-            return AstPlus.Parse(list);
+            return AstAdd.Parse(list);
+        }
+
+         if (input == "*")
+        {
+            return AstMultiply.Parse(list);
         }
         
         if (input == "^")

@@ -18,7 +18,7 @@ public class DeriveEngineParseTests
     public void DeriveEngineParse_xpower2()
     {
         var engine = new DeriveEngine();
-        var result = engine.Parse("x 2 ^");
-        Assert.Equal("x 2 ^", result.ToString());
+        var result = engine.Parse("x 2 *");
+        Assert.Equal("x 2 *", result.ToString());
     }
 }

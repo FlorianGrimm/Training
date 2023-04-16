@@ -13,4 +13,9 @@ public class AstVariable : Ast
     {
         sb.Append(this.Name);
     }
+
+    override public Ast Visit(IVisitor visitor)
+    {
+        return visitor.Visit(this);
+    }
 }

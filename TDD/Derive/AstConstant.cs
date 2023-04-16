@@ -13,4 +13,9 @@ public class AstConstant : Ast
     {
         sb.Append(this.Value.ToString());
     }
+
+    override public Ast Visit(IVisitor visitor)
+    {
+        return visitor.Visit(this);
+    }
 }

@@ -1,8 +1,7 @@
 namespace Derive;
-
-public class AstPower : Ast
+public class AstAdd : Ast
 {
-    public static AstPower Parse(List<Ast> list)
+    public static AstAdd Parse(List<Ast> list)
     {
         if (list.Count < 2)
         {
@@ -12,14 +11,13 @@ public class AstPower : Ast
         list.RemoveAt(list.Count - 1);
         var left=list[list.Count - 1];
         list.RemoveAt(list.Count - 1);
-        return new AstPower(left, right);
+        return new AstAdd(left, right);
     }
 
     public Ast Left { get; }
     public Ast Right { get; }
 
-
-    public AstPower(Ast left, Ast right)
+    public AstAdd(Ast left, Ast right)
     {
         this.Left = left;
         this.Right = right;
@@ -31,7 +29,7 @@ public class AstPower : Ast
         sb.Append(" ");
         this.Right.AsString(sb);
         sb.Append(" ");
-        sb.Append("^");
+        sb.Append("+");
     }
 
     override public Ast Visit(IVisitor visitor)
